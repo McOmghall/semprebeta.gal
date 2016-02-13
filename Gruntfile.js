@@ -62,7 +62,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-processhtml');
 
-  grunt.registerTask('makeJs', ['browserify', 'uglify'];
+  grunt.registerTask('makeJs', ['browserify', 'uglify']);
   grunt.registerTask('default', ['clean:dist', 'makeJs', 'copy:all', 'cssmin', 'processhtml', 'copy:finalRelease']);
   grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deploy']);
   grunt.registerTask('deploy', ['default', 'doDeploy']);
