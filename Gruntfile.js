@@ -1,65 +1,58 @@
 module.exports = function(grunt) {
+
   grunt.initConfig({
+    distroDir: 'dist/',
+    sourceDir: 'src/',
+    deployDir: '/var/www/html/semprebeta.gal/',
     clean: {
-      dist: ['dist/'],
-      preRelease: ['dist/*', '!dist/index.html']
+      dist: ['<%=distroDir%>'],
+      deploy: ['<%=deployDir%>**']
     },
     browserify: {
-      'dist/semprebeta-client-side.js': ['src/semprebeta-client-side.js']
+      '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
     },
     copy: {
       all: {
         expand: true,
-        flatten: true,
         filter: 'isFile',
-        cwd: 'src/',
+        cwd: '<%=sourceDir%>',
         src: ['base.html', 'semprebeta-client-side.css', 'imgs/**'],
-        dest: 'dist/'
+        dest: '<%=distroDir%>'
       },
       finalRelease: {
-        src: ['dist/inlined.html'],
-        dest: 'dist/index.html'
-      }
-    },
-    imageEmbed: {
-      css: {
-        src: ['dist/semprebeta-client-side.css'],
-        dest: 'dist/semprebeta-client-side.css',
-        options: {
-          deleteAfterEncoding: true
-        }
+        src: ['<%=distroDir%>inlined.html'],
+        dest: '<%=distroDir%>index.html'
       },
-      html: {
-        src: ['dist/base.html'],
-        dest: 'dist/base.html',
-        options: {
-          deleteAfterEncoding: true,
-          typeSrc: true
-        }
+      deploy: {
+        expand: true,
+	cwd: '<%=distroDir%>', 
+        src: ['index.html', 'imgs/**'],
+	dest: '<%=deployDir%>'
       }
     },
     uglify: {
       js: {
         files: {
-          'dist/semprebeta-client-side.js': ['dist/semprebeta-client-side.js']
+          '<%=distroDir%>semprebeta-client-side.js': ['<%=distroDir%>semprebeta-client-side.js']
         }
       }
     },
     cssmin: {
       css: {
         files: {
-          'dist/semprebeta-client-side.css': ['dist/semprebeta-client-side.css']
+          '<%=distroDir%>semprebeta-client-side.css': ['<%=distroDir%>semprebeta-client-side.css']
         }
       }
-    }, 
+    },
     processhtml: {
       inline: {
         files: {
-          'dist/inlined.html': ['dist/base.html']
+          '<%=distroDir%>inlined.html': ['<%=distroDir%>base.html']
         }
       }
     }
   });
+
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -69,5 +62,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-processhtml');
 
-  grunt.registerTask('default', ['clean', 'browserify', 'copy:all', 'imageEmbed', 'uglify', 'cssmin', 'processhtml', 'copy:finalRelease', 'clean:preRelease']);
+  grunt.registerTask('makeJs', ['browserify', 'uglify'];
+  grunt.registerTask('default', ['clean:dist', 'makeJs', 'copy:all', 'cssmin', 'processhtml', 'copy:finalRelease']);
+  grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deploy']);
+  grunt.registerTask('deploy', ['default', 'doDeploy']);
 };

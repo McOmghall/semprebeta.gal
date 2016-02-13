@@ -1,0 +1,16 @@
+.background-astano {
+  background-image: url('imgs/astano.jpg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+.title-colored {
+  color: #0B1B42;
+}
+.no-padding-right {
+  padding-right: 0 !important;
+}
+.extend-to-bottom {
+  height: 100%;
+}
