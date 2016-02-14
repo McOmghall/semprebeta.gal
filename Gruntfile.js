@@ -20,14 +20,14 @@ module.exports = function(grunt) {
         dest: '<%=distroDir%>'
       },
       finalRelease: {
-        src: ['<%=distroDir%>inlined.html'],
+        src: ['<%=distroDir%>base.html'],
         dest: '<%=distroDir%>index.html'
       },
       deploy: {
         expand: true,
-	cwd: '<%=distroDir%>', 
+        cwd: '<%=distroDir%>',
         src: ['index.html', 'imgs/**'],
-	dest: '<%=deployDir%>'
+        dest: '<%=deployDir%>'
       }
     },
     uglify: {
@@ -47,7 +47,18 @@ module.exports = function(grunt) {
     processhtml: {
       inline: {
         files: {
-          '<%=distroDir%>inlined.html': ['<%=distroDir%>base.html']
+          '<%=distroDir%>base.html': ['<%=distroDir%>base.html']
+        }
+      }
+    },
+    htmlmin: { // Task
+      dist: { // Target
+        options: { // Target options
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: { // Dictionary of files
+          'dist/base.html': 'dist/base.html'
         }
       }
     }
@@ -57,13 +68,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks("grunt-image-embed-src");
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-  grunt.registerTask('makeJs', ['browserify', 'uglify']);
-  grunt.registerTask('default', ['clean:dist', 'makeJs', 'copy:all', 'cssmin', 'processhtml', 'copy:finalRelease']);
+  grunt.registerTask('minifyAssets', ['uglify', 'cssmin']);
+  grunt.registerTask('minify', ['minifyAssets', 'processhtml', 'htmlmin']);
+  grunt.registerTask('default', ['clean:dist', 'browserify', 'copy:all', 'copy:finalRelease']);
   grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deploy']);
   grunt.registerTask('deploy', ['default', 'doDeploy']);
 };
