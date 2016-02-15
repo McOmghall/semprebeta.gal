@@ -43,7 +43,8 @@ angular.module('compPoolStats', [])
           this.status = compPoolStatsConstants.statuses.connecting;
         },
         getCurrentStats: function() {
-          var timeSpentMs = Date.now() - this.instantiationTime;
+          var timeSpent = (this.timeOfFirstJob == null ? 0 : (Date.now() - this.timeOfFirstJob) / 1000);
+          var resultsPerSecond = (this.timeOfFirstJob == null ? 0 : this.results / (timeSpent / 1000));
           return {
             status: this.status,
             statuses: compPoolStatsConstants.statuses,
@@ -62,8 +63,8 @@ angular.module('compPoolStats', [])
             jobs: this.jobs,
             variables: this.variables,
             results: this.results,
-            timeSpent: timeSpentMs / 1000,
-            resultsPerSecond: this.results / (timeSpentMs / 1000)
+            timeSpent: timeSpent,
+            resultsPerSecond: resultsPerSecond
           }
         }
       }

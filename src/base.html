@@ -13,19 +13,24 @@
   </script>
   <!-- /build -->
 </head>
+
 <body class="background-astano extend-to-bottom">
   <nav class="navbar navbar-default navbar-collapse" role="navigation">
-    <span class="navbar-brand navbar-left ">semprebeta {punto} gal</span>
+    <div class="col-md-4 navbar-brand navbar-left text-center title-nav">
+      <div class="title">semprebeta {punto} gal</div>
+      <div class="subtitle">we build</div>
+    </div>
   </nav>
   <nav class="navbar navbar-default navbar-collapse navbar-fixed-bottom" ng-controller="JobsCtrl">
-    <a ng-click="deactivate()">
-      <div class="list-group-item container" ng-hide="stats().isIdle()">
-        <div class="sidebar-brand col-md-4">You're helping people using your computer (click to stop):</div>
+    <div class="list-group-item container" ng-show="!stats().isIdle()">
+      <a ng-click="deactivate()">
+        <div class="sidebar-brand col-md-4 text-left">You're helping people using your computer (click to stop):</div>
         <div class="col-md-4"></div>
-        <div class="col-md-4 text-center" ng-show="stats().isIdle()">Got {{stats.results}} results ({{stats.resultsPerSecond | number:2}} r/s in {{stats.timeSpent | number:3}} seconds)</div>
-        <div class="col-md-4 text-center" ng-show="stats().isError()">An error ocurred{{errorMessage}}</div>
-      </div>
-    </a>
+        <div class="col-md-4 text-right" ng-show="stats().isConnecting()">Connecting...</div>
+        <div class="col-md-4 text-right" ng-show="stats().isOk()">Got {{stats().results}} results ({{stats().resultsPerSecond | number:2}} r/s in {{stats().timeSpent | number:3}} seconds)</div>
+        <div class="col-md-4 text-right" ng-show="stats().isError()">An error ocurred{{errorMessage}}</div>
+      </a>
+    </div>
     <div class="list-group-item container" ng-show="stats().isIdle()">
       <a ng-click="activate()">
         <div class="col-md-3"></div>
