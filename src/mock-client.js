@@ -1,10 +1,11 @@
 require('angular'); /*global angular*/
 require('./comp-pool-stats');
 require('./comp-pool-resources');
+require('./comp-pool-exception-handler');
 
-angular.module('compPoolJsClient', ['compPoolStats', 'compPoolResources'])
-  .factory('compPoolJsClient', ['compPoolRoot', 'compPoolStats', 'compPoolResources', '$log',
-    function(compPoolRoot, compPoolStats, compPoolResources, $log) {
+angular.module('compPoolJsClient', ['compPoolStats', 'compPoolResources', 'compPoolExceptionHandler'])
+  .factory('compPoolJsClient', ['compPoolRoot', 'compPoolStats', 'compPoolResources', 'compPoolHttpExceptions', '$log',
+    function(compPoolRoot, compPoolStats, compPoolResources, compPoolHttpExceptions, $log) {
       return {
         compPoolRoot: compPoolRoot,
         getStats: function() {
@@ -21,25 +22,20 @@ angular.module('compPoolJsClient', ['compPoolStats', 'compPoolResources'])
           return this;
         },
         getRoot: function() {
+          $log.debug("Triying to get root at service " + compPoolRoot);
           if (!this.getStats().isConnecting() && !this.getStats().isOk()) {
+            $log.debug("Service not initialized properly");
             throw new NotStartedException();
           }
 
-          try {
-            var rval;
-            compPoolResources.getRoot().then(function(e) {
-                rval = e;
-              },
-              function(e) {
-                throw e;
-              });
+          return compPoolResources.getRoot().then(function(result) {
+            $log.debug("Got root correctly: " + JSON.stringify(result));
             compPoolStats.setStatusOk();
-            return rval;
-          }
-          catch (e) {
+            return result;
+          }).catch(function(error) {
             compPoolStats.setStatusError();
-            throw e;
-          }
+            throw new compPoolHttpExceptions.HttpException(compPoolRoot, error.status);
+          });
         }
       };
     }

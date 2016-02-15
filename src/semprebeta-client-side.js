@@ -6,15 +6,15 @@ app.value('compPoolRoot', 'http://semprebeta.gal:7070/jobs');
 
 app.controller('JobsCtrl', ['$scope', '$http', '$timeout', '$log', 'compPoolJsClient',
   function($scope, $http, $timeout, $log, compPoolJsClient) {
-    
+
     $scope.stats = compPoolJsClient.getStats;
     $scope.job = {};
 
-    var jobLoop = function() {
+    var jobLoop = function(job) {
       $log.debug('Rolling job');
-      $scope.job.getRandomVariable().compute().storeAsResult();
+      job.getRandomVariable().compute().storeAsResult();
       if ($scope.stats().isOk()) {
-        $timeout(jobLoop, 100);
+        $timeout(jobLoop, 100, true, job);
       }
     };
 
@@ -25,13 +25,14 @@ app.controller('JobsCtrl', ['$scope', '$http', '$timeout', '$log', 'compPoolJsCl
 
     $scope.activate = function() {
       $log.debug('Activating');
-      try {
-        $scope.job = compPoolJsClient.start().getRoot().getRandomJob();
-        jobLoop();
-      } catch (e) {
-        $scope.errorMessage = ": " + e.message;
-      }
+      compPoolJsClient.start().getRoot().then(function(root) {
+        root.getRandomJob().then(function(job) {
+	  jobLoop();
+	  return true;
+	});
+      }).catch(function(error) {
+        $scope.errorMessage = error.message;
+      });
     };
-    
   }
 ]);

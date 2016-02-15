@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       deploy: {
         expand: true,
         cwd: '<%=distroDir%>',
-        src: ['index.html', 'imgs/**'],
+        src: ['**'],
         dest: '<%=deployDir%>'
       }
     },
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('minifyAssets', ['uglify', 'cssmin']);
   grunt.registerTask('minify', ['minifyAssets', 'processhtml', 'htmlmin']);
-  grunt.registerTask('default', ['clean:dist', 'browserify', 'copy:all', 'copy:finalRelease']);
+  grunt.registerTask('default', ['clean:dist', 'browserify', 'copy:all', 'minify', 'copy:finalRelease']);
   grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deploy']);
   grunt.registerTask('deploy', ['default', 'doDeploy']);
 };
