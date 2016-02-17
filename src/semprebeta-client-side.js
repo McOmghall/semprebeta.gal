@@ -31,7 +31,7 @@ app.controller('JobsCtrl', ['$scope', '$http', '$timeout', '$log', 'compPoolJsCl
 	  return true;
 	});
       }).catch(function(error) {
-        $scope.errorMessage = error.message;
+        $scope.errorMessage = ": " + error.message;
       });
     };
   }

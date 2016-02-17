@@ -9,7 +9,9 @@ module.exports = function(grunt) {
       deploy: ['<%=deployDir%>**']
     },
     browserify: {
-      '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
+      dist: {
+        '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
+      }
     },
     copy: {
       all: {
@@ -51,13 +53,13 @@ module.exports = function(grunt) {
         }
       }
     },
-    htmlmin: { // Task
-      dist: { // Target
-        options: { // Target options
+    htmlmin: {
+      dist: {
+        options: {
           removeComments: true,
           collapseWhitespace: true
         },
-        files: { // Dictionary of files
+        files: {
           'dist/base.html': 'dist/base.html'
         }
       }
@@ -75,7 +77,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('minifyAssets', ['uglify', 'cssmin']);
   grunt.registerTask('minify', ['minifyAssets', 'processhtml', 'htmlmin']);
-  grunt.registerTask('default', ['clean:dist', 'browserify', 'copy:all', 'minify', 'copy:finalRelease']);
+  grunt.registerTask('default', ['clean:dist', 'browserify:dist', 'copy:all', 'minify', 'copy:finalRelease']);
   grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deploy']);
   grunt.registerTask('deploy', ['default', 'doDeploy']);
 };
