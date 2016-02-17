@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         src: ['<%=distroDir%>base.html'],
         dest: '<%=distroDir%>index.html'
       },
-      deploy: {
+      deployToApache: {
         expand: true,
         cwd: '<%=distroDir%>',
         src: ['**'],
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('minifyAssets', ['uglify', 'cssmin']);
   grunt.registerTask('minify', ['minifyAssets', 'processhtml', 'htmlmin']);
-  grunt.registerTask('default', ['clean:dist', 'browserify:dist', 'copy:all', 'minify', 'copy:finalRelease']);
-  grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deploy']);
-  grunt.registerTask('deploy', ['default', 'doDeploy']);
+  grunt.registerTask('default', ['clean:dist', 'browserify:dist', 'copy:all', 'copy:finalRelease']);
+  grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deployToApache']);
+  grunt.registerTask('deployToApache', ['default', 'doDeploy']);
 };
