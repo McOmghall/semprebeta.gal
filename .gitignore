@@ -3,4 +3,5 @@
 /node_modules/
 /dist/
 /test/
+/logs/
 grunt.deploy.options.json

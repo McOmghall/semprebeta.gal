@@ -8,7 +8,7 @@
   <script src="./semprebeta-client-side.js"></script>
   <!-- /build -->
   <!-- build:css inline -->
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./bootstrap.css">
   <link rel="stylesheet" href="./semprebeta-client-side.css">
   </script>
   <!-- /build -->
@@ -22,16 +22,16 @@
     </div>
   </nav>
   <nav class="navbar navbar-default navbar-collapse navbar-fixed-bottom" ng-controller="JobsCtrl">
-    <div class="list-group-item container" ng-show="!stats().isIdle()">
+    <div class="list-group-item container" ng-show="status != statuses.idle">
       <a ng-click="deactivate()">
         <div class="sidebar-brand col-md-4 text-left">You're helping people using your computer (click to stop):</div>
         <div class="col-md-4"></div>
-        <div class="col-md-4 text-right" ng-show="stats().isConnecting()">Connecting...</div>
-        <div class="col-md-4 text-right" ng-show="stats().isOk()">Got {{stats().results}} results ({{stats().resultsPerSecond | number:2}} r/s in {{stats().timeSpent | number:3}} seconds)</div>
-        <div class="col-md-4 text-right" ng-show="stats().isError()">An error ocurred{{errorMessage}}</div>
+        <div class="col-md-4 text-right" ng-show="status == statuses.connecting">Connecting...</div>
+        <div class="col-md-4 text-right" ng-show="status == statuses.ok">Got {{stats().results}} results ({{stats().resultsPerSecond | number:2}} r/s in {{stats().timeSpent | number:3}} seconds)</div>
+        <div class="col-md-4 text-right" ng-show="status == statuses.error">An error ocurred{{errorMessage}}</div>
       </a>
     </div>
-    <div class="list-group-item container" ng-show="stats().isIdle()">
+    <div class="list-group-item container" ng-show="status == statuses.idle">
       <a ng-click="activate()">
         <div class="col-md-3"></div>
         <div class="col-md-6 text-center">Click to help people with your computer</div>

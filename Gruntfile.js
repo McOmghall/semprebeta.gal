@@ -10,7 +10,9 @@ module.exports = function(grunt) {
     },
     browserify: {
       dist: {
-        '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
+        files: {
+          '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
+        }
       }
     },
     copy: {
@@ -20,6 +22,10 @@ module.exports = function(grunt) {
         cwd: '<%=sourceDir%>',
         src: ['base.html', 'semprebeta-client-side.css', 'imgs/**'],
         dest: '<%=distroDir%>'
+      },
+      css: {
+        src: ['./node_modules/bootstrap/dist/css/bootstrap.min.css'],
+        dest: '<%=distroDir%>bootstrap.css'
       },
       finalRelease: {
         src: ['<%=distroDir%>base.html'],
@@ -77,7 +83,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('minifyAssets', ['uglify', 'cssmin']);
   grunt.registerTask('minify', ['minifyAssets', 'processhtml', 'htmlmin']);
-  grunt.registerTask('default', ['clean:dist', 'browserify:dist', 'copy:all', 'copy:finalRelease']);
+  grunt.registerTask('default', ['clean:dist', 'browserify:dist', 'copy:all', 'copy:css', 'copy:finalRelease']);
   grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deployToApache']);
   grunt.registerTask('deployToApache', ['default', 'doDeploy']);
 };

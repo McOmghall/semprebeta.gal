@@ -16,9 +16,23 @@
   "bugs": {
     "url": "https://github.com/McOmghall/semprebeta.gal/issues"
   },
+  "config": {
+    "comp-pool": {
+      "protocol": "http://",
+      "host": "localhost",
+      "port": 7070,
+      "root": "/"   
+    },
+    "statics": {
+      "port": 8080
+    }
+  },
   "dependencies": {
     "angular": "^1.5.0",
     "bootstrap": "^3.3.6",
+    "comp-pool": "file:///home/pmgberm/git/comp-pool",
+    "comp-pool-client": "file:///home/pmgberm/git/comp-pool-client",
+    "express": "^4.13.4",
     "grunt-cli": "^0.1.13"
   },
   "devDependencies": {
@@ -30,5 +44,6 @@
     "grunt-contrib-htmlmin": "^0.6.0",
     "grunt-contrib-uglify": "^0.11.1",
     "grunt-processhtml": "^0.3.11"
-  }
+  },
+  "private": true
 }
