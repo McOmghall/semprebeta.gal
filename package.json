@@ -4,7 +4,7 @@
   "description": "The frontend for semprebeta.gal",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test",
+    "test": "set NODE_ENV=test && standard && grunt test",
     "start": "grunt && node index.js"
   },
   "repository": {
@@ -17,12 +17,6 @@
     "url": "https://github.com/McOmghall/semprebeta.gal/issues"
   },
   "config": {
-    "comp-pool": {
-      "protocol": "http://",
-      "host": "localhost",
-      "port": 7070,
-      "root": "/"   
-    },
     "statics": {
       "port": 8080
     }
@@ -30,10 +24,10 @@
   "dependencies": {
     "angular": "^1.5.0",
     "bootstrap": "^3.3.6",
-    "comp-pool": "file:///home/pmgberm/git/comp-pool",
-    "comp-pool-client": "file:///home/pmgberm/git/comp-pool-client",
+    "comp-pool": "^0.4.0",
     "express": "^4.13.4",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "grunt-envify": "0.0.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -42,8 +36,17 @@
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-jasmine": "^1.0.0",
     "grunt-contrib-uglify": "^0.11.1",
-    "grunt-processhtml": "^0.3.11"
+    "grunt-env": "^0.4.4",
+    "grunt-processhtml": "^0.3.11",
+    "standard": "latest"
+  },
+  "standard": {
+    "ignore": [
+      "test/**",
+      "vendor/**"
+    ]
   },
   "private": true
 }

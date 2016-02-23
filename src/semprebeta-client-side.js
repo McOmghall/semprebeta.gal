@@ -1,63 +1,71 @@
-require('angular'); /*global angular*/
-require('comp-pool-client');
-var config = require('../semprebeta-config');
+require('angular') /*global angular*/
+require('comp-pool')
 
-var app = angular.module('SemprebetaApp', ['CompPoolClient']);
-app.factory('compPoolRoot', ['$location', function($location) {
-   var compPoolHost = config.compPoolHost;
-   if (compPoolHost == 'localhost' && $location.host() != 'localhost') {
-     compPoolHost = $location.host();
-   }
-   
-   return config.compPoolProtocol + compPoolHost + ":" + config.compPoolPort + config.compPoolRoot;
-}]);
+angular.module('SemprebetaApp', ['CompPoolClient'])
+  .factory('compPoolRoot', ['$log', function ($log) {
+    var rootDefault = 'http://semprebeta-comp-pool.herokuapp.com'
+    $log.debug('Getting value for comp-pool root %s (fall back to %s)', process.env.COMP_POOL_ROOT, rootDefault)
+    return process.env.COMP_POOL_ROOT || rootDefault
+  }])
 
-app.controller('JobsCtrl', ['$scope', '$http', '$timeout', '$log', 'compPoolClient',
-  function($scope, $http, $timeout, $log, compPoolClient) {
+  .controller('JobsCtrl', ['$scope', '$http', '$timeout', '$log', '$q', 'compPoolClient',
+    function ($scope, $http, $timeout, $log, $q, compPoolClient) {
+      $scope.job = {}
 
-    $scope.stats = compPoolClient.getStats;
-    $scope.job = {};
-
-    $scope.statuses = {
-      ok: "OK",
-      idle: "IDLE",
-      connecting: "CONNECTING",
-      error: "ERROR"
-    };
-    $scope.status = $scope.statuses.idle;
-
-    var jobLoop = function(job) {
-      $log.debug('Rolling job');
-      job.getRandomVariable().compute().storeAsResult();
-      if ($scope.status == $scope.statuses.ok) {
-        $timeout(jobLoop, 100, true, job);
+      $scope.statuses = {
+        ok: 'OK',
+        idle: 'IDLE',
+        connecting: 'CONNECTING',
+        error: 'ERROR'
       }
-    };
+      $scope.status = $scope.statuses.idle
+      $scope.stats = {}
+      $scope.stats.results = 0
 
-    $scope.deactivate = function() {
-      $log.debug('Deactivating');
-      $scope.status = $scope.statuses.idle;
-    };
+      var jobLoop = function (job) {
+        $log.debug('Rolling job %j', job)
+        job.getVariablesRoot().then(function (variablesRoot) {
+          $log.debug('Getting random variable with %j', variablesRoot)
+          return variablesRoot.getRandomVariable()
+        }).then(function (variable) {
+          $log.debug('Computing with variable %j', variable)
+          return variable.compute()
+        }).then(function (variableWithResult) {
+          $log.debug('Saving variable %j', variableWithResult)
+          $scope.stats.results++
+          $scope.stats.timeSpent = (new Date().getTime() - $scope.firstJob.getTime()) / 1000
+          $scope.stats.resultsPerSecond = $scope.stats.results / $scope.stats.timeSpent
+          variableWithResult.saveResult({asVariableToo: true})
+        })
 
-    $scope.activate = function() {
-      $log.debug('Activating');
+        if ($scope.status === $scope.statuses.ok) {
+          $timeout(jobLoop, 100, true, job)
+        }
+      }
 
-      compPoolClient.then(function(api) {
-	$log.debug('Trying to get root');
-        $scope.status = $scope.statuses.connecting;
-	return api.getRoot();
-      }).then(function(root) {
-	$log.debug('Got root');
-        $scope.status = $scope.statuses.ok;
-	return root.getRandomJob();
-      }).then(function(job) {
-	$log.debug('Initiating job loop');
-        jobLoop(job);
-	return job;
-      }).catch(function(error) {
-        $scope.errorMessage = ": " + (error.message || "Could not connect to server");
-        $scope.status = $scope.statuses.error;
-      });
-    };
-  }
-]);
+      $scope.deactivate = function () {
+        $log.debug('Deactivating')
+        $scope.status = $scope.statuses.idle
+      }
+
+      $scope.activate = function () {
+        $log.debug('Activating %j', compPoolClient)
+
+        var pq = compPoolClient.getJobsRoot().then(function (root) {
+          $log.debug('Got root %j', root)
+          $scope.status = $scope.statuses.ok
+          return root.getRandomJob()
+        }).then(function (job) {
+          $log.debug('Got job %j', job)
+          $scope.firstJob = new Date()
+          jobLoop(job)
+          return job
+        }).catch(function (err) {
+          $log.error('Something happened! %j', err)
+          $scope.status = $scope.statuses.error
+        })
+
+        $log.debug('Activated %j', pq)
+      }
+    }
+  ])

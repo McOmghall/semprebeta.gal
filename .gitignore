@@ -5,3 +5,4 @@
 /test/
 /logs/
 grunt.deploy.options.json
+.project

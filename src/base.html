@@ -27,7 +27,7 @@
         <div class="sidebar-brand col-md-4 text-left">You're helping people using your computer (click to stop):</div>
         <div class="col-md-4"></div>
         <div class="col-md-4 text-right" ng-show="status == statuses.connecting">Connecting...</div>
-        <div class="col-md-4 text-right" ng-show="status == statuses.ok">Got {{stats().results}} results ({{stats().resultsPerSecond | number:2}} r/s in {{stats().timeSpent | number:3}} seconds)</div>
+        <div class="col-md-4 text-right" ng-show="status == statuses.ok">Got {{stats.results}} results ({{stats.resultsPerSecond | number:2}} r/s in {{stats.timeSpent | number:3}} seconds)</div>
         <div class="col-md-4 text-right" ng-show="status == statuses.error">An error ocurred{{errorMessage}}</div>
       </a>
     </div>

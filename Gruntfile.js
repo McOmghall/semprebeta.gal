@@ -1,18 +1,20 @@
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   grunt.initConfig({
     distroDir: 'dist/',
     sourceDir: 'src/',
     deployDir: '/var/www/html/semprebeta.gal/',
     clean: {
-      dist: ['<%=distroDir%>'],
-      deploy: ['<%=deployDir%>**']
+      dist: ['<%=distroDir%>']
     },
     browserify: {
       dist: {
         files: {
           '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
         }
+      },
+      test: {
+        src: ['./**/*.test.js', '!./node_modules/**', '!./test/**'],
+        dest: 'test/spec-bundle.js'
       }
     },
     copy: {
@@ -69,21 +71,36 @@ module.exports = function(grunt) {
           'dist/base.html': 'dist/base.html'
         }
       }
+    },
+    envify: {
+      prod: {
+        files: {
+          '<%=distroDir%>semprebeta-client-side.js': ['<%=distroDir%>semprebeta-client-side.js']
+        }
+      }
+    },
+    jasmine: {
+      test: {
+        options: {
+          specs: 'test/spec-bundle.js'
+        }
+      }
     }
-  });
+  })
 
+  grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-contrib-copy')
+  grunt.loadNpmTasks('grunt-browserify')
+  grunt.loadNpmTasks('grunt-envify')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.loadNpmTasks('grunt-contrib-cssmin')
+  grunt.loadNpmTasks('grunt-processhtml')
+  grunt.loadNpmTasks('grunt-contrib-htmlmin')
+  grunt.loadNpmTasks('grunt-contrib-jasmine')
 
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-processhtml');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-
-  grunt.registerTask('minifyAssets', ['uglify', 'cssmin']);
-  grunt.registerTask('minify', ['minifyAssets', 'processhtml', 'htmlmin']);
-  grunt.registerTask('default', ['clean:dist', 'browserify:dist', 'copy:all', 'copy:css', 'copy:finalRelease']);
-  grunt.registerTask('doDeploy', ['clean:deploy', 'copy:deployToApache']);
-  grunt.registerTask('deployToApache', ['default', 'doDeploy']);
-};
+  grunt.registerTask('minify', ['uglify', 'cssmin', 'processhtml', 'htmlmin', 'envify:prod'])
+  grunt.registerTask('test', ['browserify:test', 'jasmine:test'])
+  grunt.registerTask('default', 'Build all', [
+    'clean:dist', 'browserify:dist', 'copy:all', 'copy:css', 'copy:finalRelease'
+  ])
+}
