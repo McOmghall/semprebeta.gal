@@ -10,6 +10,6 @@ server.all('*', function logAllRequests (req, res, next) {
 var staticRoot = path.resolve(__dirname, 'dist/')
 console.log('Serving statics at %s', staticRoot)
 server.use('/', express.static(staticRoot))
-var listener = server.listen(8080, function () {
+var listener = server.listen(process.env.PORT || 8080, function () {
   console.log('Statics server running at %j for %s', listener.address(), staticRoot)
 })
