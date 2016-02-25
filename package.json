@@ -27,6 +27,7 @@
     "bootstrap": "^3.3.6",
     "comp-pool": "latest",
     "cross-env": "^1.0.7",
+    "envify": "^3.4.0",
     "express": "^4.13.4",
     "grunt-cli": "^0.1.13"
   },
