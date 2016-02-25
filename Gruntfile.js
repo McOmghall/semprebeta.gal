@@ -35,12 +35,6 @@ module.exports = function (grunt) {
       finalRelease: {
         src: ['<%=distroDir%>base.html'],
         dest: '<%=distroDir%>index.html'
-      },
-      deployToApache: {
-        expand: true,
-        cwd: '<%=distroDir%>',
-        src: ['**'],
-        dest: '<%=deployDir%>'
       }
     },
     uglify: {
