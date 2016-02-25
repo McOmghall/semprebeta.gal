@@ -3,11 +3,10 @@ require('comp-pool')
 
 angular.module('SemprebetaApp', ['CompPoolClient'])
   .factory('compPoolRoot', ['$log', function ($log) {
-    var rootDefault = 'http://semprebeta-comp-pool.herokuapp.com'
+    var rootDefault = 'http://localhost:7070/'
     $log.debug('Getting value for comp-pool root %s (fall back to %s)', process.env.COMP_POOL_ROOT, rootDefault)
     return process.env.COMP_POOL_ROOT || rootDefault
   }])
-
   .controller('JobsCtrl', ['$scope', '$http', '$timeout', '$log', '$q', 'compPoolClient',
     function ($scope, $http, $timeout, $log, $q, compPoolClient) {
       $scope.job = {}
