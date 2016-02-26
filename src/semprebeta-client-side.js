@@ -35,11 +35,15 @@ angular.module('SemprebetaApp', ['CompPoolClient'])
           $scope.stats.timeSpent = (new Date().getTime() - $scope.firstJob.getTime()) / 1000
           $scope.stats.resultsPerSecond = $scope.stats.results / $scope.stats.timeSpent
           variableWithResult.saveResult({asVariableToo: true})
-        })
 
-        if ($scope.status === $scope.statuses.ok) {
-          $timeout(jobLoop, 100, true, job)
-        }
+          if ($scope.status === $scope.statuses.ok) {
+            $log.debug('Calling a new job')
+            $timeout(jobLoop, 100, true, job)
+          }
+        }).catch(function (err) {
+          $log.error('Something happened! %j', err)
+          $scope.status = $scope.statuses.error
+        })
       }
 
       $scope.deactivate = function () {
