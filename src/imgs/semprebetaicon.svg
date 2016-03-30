@@ -28,7 +28,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.92000002"
-     inkscape:cx="-17.58859"
+     inkscape:cx="-231.71902"
      inkscape:cy="270.93291"
      inkscape:document-units="px"
      inkscape:current-layer="svg2"
@@ -233,7 +233,7 @@
      inkscape:groupmode="layer"
      inkscape:label="Capa 1" />
   <rect
-     style="opacity:1;fill:#d3ffe9;fill-opacity:0.12941177;fill-rule:evenodd;stroke:#d3ffe9;stroke-width:1.65285683;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.3882353"
+     style="opacity:1;fill:#e6ed0c;fill-opacity:0.1254902;fill-rule:evenodd;stroke:#e6ed0c;stroke-width:1.65285683;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect5580"
      width="450.34735"
      height="500.34735"
@@ -251,11 +251,11 @@
      inkscape:connector-curvature="0" />
   <g
      transform="matrix(2.2539082,-0.01939258,-0.06095776,2.025816,-38.018666,-170.01362)"
-     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#275e2d;fill-opacity:1;stroke:#090909;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffbf00;fill-opacity:1;stroke:#ff6a00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      id="flowRoot3392">
     <path
        d="m 77.162651,282.03447 -13.03503,60.4248 -22.583008,0 40.527096,-187.86621 Q 94.079737,98.929007 146.0817,98.929007 q 52.97851,0 42.84014,46.997063 -7.21535,33.44727 -30.84478,45.6543 31.80969,10.98633 24.77867,43.5791 -12.48203,57.86133 -71.31992,57.86133 -25.878907,0 -34.373159,-10.98633 z m 6.320017,-29.29688 q 8.994129,21.11817 33.041982,21.11817 35.15625,0 43.42493,-38.33008 7.42601,-34.42383 -49.79394,-31.73828 l 4.47667,-20.75195 q 44.31153,0 52.73822,-39.0625 5.76701,-26.7334 -22.79745,-26.7334 -31.86035,0 -40.07637,38.08593 l -21.014042,97.41211 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:250px;font-family:'Ancient Geek';-inkscape-font-specification:'Ancient Geek';fill:#275e2d;fill-opacity:1;stroke:#090909;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:250px;font-family:'Ancient Geek';-inkscape-font-specification:'Ancient Geek';fill:#ffbf00;fill-opacity:1;stroke:#ff6a00;stroke-opacity:1"
        id="path3433"
        inkscape:connector-curvature="0" />
   </g>
@@ -277,7 +277,7 @@
      inkscape:transform-center-x="10.423066"
      inkscape:transform-center-y="-4.6202531" />
   <rect
-     style="opacity:1;fill:#d3ffe9;fill-opacity:0.12941177;stroke:#d3ffe9;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.3882353"
+     style="opacity:1;fill:#e6ed0c;fill-opacity:0.19607843;stroke:#e6ed0c;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4279"
      width="27.83515"
      height="32.166939"
