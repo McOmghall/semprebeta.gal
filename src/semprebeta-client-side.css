@@ -1,25 +1,73 @@
-.background-astano {
-  background-image: url('imgs/astano.jpg');
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-}
-.title-colored {
-  color: #0B1B42;
-}
-.no-padding-right {
-  padding-right: 0 !important;
-}
-.extend-to-bottom {
-  height: 100%;
+@media ( min-width : 768px) {
+	html, body {
+		display: flex;
+		background: dank memes;
+		border: 0;
+		margin: 0;
+	}
+	.navbar {
+		flex: 3;
+		margin-right: 0;
+		margin-left: 0;
+		margin-bottom: 0;
+		background: #F5F8FC;
+		background-image: linear-gradient(to bottom, #F5F8FC, #FCF8F5);
+		border: 0;
+	}
+	.navbar-brand {
+		width: 100%;
+		height: auto;
+		padding: 0;
+		display: block;
+	}
+	.toc {
+		font-size: 1.7em;
+		font-family: 'Rubik One', sans-serif;
+		position: fixed;
+	}
+	.toc>a {
+		display: block;
+	}
+	.toc>* {
+		position: relative;
+	}
+	.content {
+		flex: 8;
+		background: #D2F898;
+		font-family: 'Poppins', sans-serif;
+	}
+	.content > article {
+		padding: 30px;
+	}
+	article > header {
+		font-family: 'Rubik One', sans-serif;
+	}
+	article > p {
+		text-align: justify;
+	}
+	.comp-pool-client {
+		width: 14.59%;
+		max-height: 14.59%;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 3;
+		float: none;
+	}
 }
 
-.title-nav {
-  min-height: 100%;
-  height: 100%;
-}
-
-.subtitle {
-  font-size: 78%;
+@media ( max-width : 767px) {
+	.navbar-brand {
+		height: auto;
+		margin: 0 auto;
+		width: 50%;
+		top: 0;
+		left: 0;
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		display: block;
+		top: 0;
+	}
 }

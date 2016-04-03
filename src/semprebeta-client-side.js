@@ -53,6 +53,7 @@ angular.module('SemprebetaApp', ['CompPoolClient'])
 
       $scope.activate = function () {
         $log.debug('Activating %j', compPoolClient)
+        $scope.status = $scope.statuses.connecting
 
         var pq = compPoolClient.getJobsRoot().then(function (root) {
           $log.debug('Got root %j', root)

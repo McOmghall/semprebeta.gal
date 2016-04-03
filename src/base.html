@@ -1,44 +1,95 @@
 <!DOCTYPE html>
-<html class="extend-to-bottom" ng-app="SemprebetaApp">
+<html ng-app="SemprebetaApp">
 
 <head>
-  <title>semprebeta {punto} gal</title>
-  <meta charset="UTF-8">
-  <!-- build:js inline -->
-  <script src="./semprebeta-client-side.js"></script>
-  <!-- /build -->
-  <!-- build:css inline -->
-  <link rel="stylesheet" href="./bootstrap.css">
-  <link rel="stylesheet" href="./semprebeta-client-side.css">
-  </script>
-  <!-- /build -->
+<title>semprebeta {punto} gal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1">
+<meta property="og:title" content="Benvida" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="semprebeta.gal" />
+<meta property="og:image" content="./imgs/web_icon.png" />
+<meta property="og:site_name" content="semprebeta.gal" />
+<!-- build:js inline -->
+<script src="./semprebeta-client-side.js"></script>
+<!-- /build -->
+<link href='https://fonts.googleapis.com/css?family=Poppins&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<!-- build:css inline -->
+<link rel="stylesheet" href="./semprebeta-client-side.css">
+<!-- /build -->
 </head>
 
-<body class="background-astano extend-to-bottom">
-  <nav class="navbar navbar-default navbar-collapse" role="navigation">
-    <div class="col-md-4 navbar-brand navbar-left text-center title-nav">
-      <div class="title">semprebeta {punto} gal</div>
-      <div class="subtitle">we build</div>
+<body>
+  <nav class="navbar" role="navigation">
+    <img class="col-sm-12 navbar-brand" src="./imgs/web_icon.png" alt="semprebeta.gal"/>
+    <div class="toc">
+      <a>Que somos?</a>
+      <a>Quen somos?</a>
+      <h1>Proxectos</h1>
+      <a>Tabaco Galego</a>
+      <a>Que facer no rural</a>
     </div>
   </nav>
-  <nav class="navbar navbar-default navbar-collapse navbar-fixed-bottom" ng-controller="JobsCtrl">
-    <div class="list-group-item container" ng-show="status != statuses.idle">
-      <a ng-click="deactivate()">
-        <div class="sidebar-brand col-md-4 text-left">You're helping people using your computer (click to stop):</div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-right" ng-show="status == statuses.connecting">Connecting...</div>
-        <div class="col-md-4 text-right" ng-show="status == statuses.ok">Got {{stats.results}} results ({{stats.resultsPerSecond | number:2}} r/s in {{stats.timeSpent | number:3}} seconds)</div>
-        <div class="col-md-4 text-right" ng-show="status == statuses.error">An error ocurred{{errorMessage}}</div>
-      </a>
+  <div class="content" role="main">
+    <article>
+      <header>Que somos?</header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae elit pharetra, ultrices urna varius, tempor purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean a odio at neque sodales varius. Proin ut arcu a felis condimentum interdum quis ornare lacus. Cras accumsan sapien et ligula tincidunt, ac malesuada orci faucibus. Nullam sed consequat felis, vel ullamcorper enim. Pellentesque a semper arcu. Nullam tellus nisi, varius id massa ac, dapibus convallis risus.
+</p><p>
+Donec lorem nulla, pharetra at lectus vel, eleifend aliquam orci. Mauris imperdiet iaculis metus vitae aliquet. Nullam ante elit, posuere vitae viverra vel, suscipit non leo. Pellentesque imperdiet tellus nec quam fringilla, ut vehicula nibh iaculis. Sed congue, leo ac hendrerit lacinia, ipsum eros rutrum felis, non ornare eros ipsum nec dui. Vivamus vestibulum fermentum mi, id dictum erat efficitur semper. Nunc euismod dolor in vehicula vestibulum. Maecenas dapibus lacinia lorem, sed consequat urna dignissim non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer facilisis, ex pretium convallis fringilla, turpis libero ultricies tellus, id aliquam sem lacus sit amet felis.
+</p><p>
+Integer nec ultricies ipsum, ut laoreet justo. Cras non malesuada ipsum. Aenean scelerisque sem et viverra faucibus. Proin sed lorem in eros vestibulum convallis vitae sed erat. Etiam egestas vehicula gravida. Suspendisse sed pharetra quam. In nec tortor iaculis, rhoncus leo a, varius eros. Nullam vitae leo neque. Etiam mollis dictum lectus fermentum aliquam. Mauris a sodales mauris. Etiam fermentum in sapien eu lacinia. Etiam non lectus sed lectus commodo placerat.
+</p><p>
+Mauris at quam luctus, malesuada lorem sit amet, vestibulum justo. Morbi scelerisque tortor et magna sagittis, a efficitur sapien aliquet. Vestibulum in tortor ligula. Nulla eu mattis ex. Suspendisse sit amet sem orci. Praesent commodo vestibulum eleifend. Mauris facilisis risus nunc, sit amet molestie massa mollis ut. Nullam eget felis fermentum dui tincidunt blandit ut sed ante. Cras lectus urna, porttitor nec turpis molestie, dignissim volutpat arcu. Ut feugiat porta diam. Maecenas varius faucibus justo in molestie.
+</p><p>
+Nullam sodales velit ipsum, non accumsan enim feugiat at. Vestibulum dictum iaculis metus, sed ullamcorper risus laoreet a. Mauris id nibh vitae diam euismod tincidunt. Morbi ac viverra risus. In hac habitasse platea dictumst. Nullam volutpat, augue eu accumsan porta, enim turpis cursus arcu, sed blandit augue sapien non lectus. Morbi rhoncus dictum metus et mattis. Fusce ac blandit arcu. Vestibulum vehicula enim ex. Nam et metus vitae lacus sodales rhoncus. Praesent luctus laoreet velit, sit amet cursus ligula. Nullam id ligula leo. Integer arcu ipsum, convallis et nulla fringilla, dictum tincidunt lorem. Duis eu congue ligula.
+    </p></article>
+    <article>
+      <header>Quen somos?</header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae elit pharetra, ultrices urna varius, tempor purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean a odio at neque sodales varius. Proin ut arcu a felis condimentum interdum quis ornare lacus. Cras accumsan sapien et ligula tincidunt, ac malesuada orci faucibus. Nullam sed consequat felis, vel ullamcorper enim. Pellentesque a semper arcu. Nullam tellus nisi, varius id massa ac, dapibus convallis risus.
+</p><p>
+Donec lorem nulla, pharetra at lectus vel, eleifend aliquam orci. Mauris imperdiet iaculis metus vitae aliquet. Nullam ante elit, posuere vitae viverra vel, suscipit non leo. Pellentesque imperdiet tellus nec quam fringilla, ut vehicula nibh iaculis. Sed congue, leo ac hendrerit lacinia, ipsum eros rutrum felis, non ornare eros ipsum nec dui. Vivamus vestibulum fermentum mi, id dictum erat efficitur semper. Nunc euismod dolor in vehicula vestibulum. Maecenas dapibus lacinia lorem, sed consequat urna dignissim non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer facilisis, ex pretium convallis fringilla, turpis libero ultricies tellus, id aliquam sem lacus sit amet felis.
+</p><p>
+Integer nec ultricies ipsum, ut laoreet justo. Cras non malesuada ipsum. Aenean scelerisque sem et viverra faucibus. Proin sed lorem in eros vestibulum convallis vitae sed erat. Etiam egestas vehicula gravida. Suspendisse sed pharetra quam. In nec tortor iaculis, rhoncus leo a, varius eros. Nullam vitae leo neque. Etiam mollis dictum lectus fermentum aliquam. Mauris a sodales mauris. Etiam fermentum in sapien eu lacinia. Etiam non lectus sed lectus commodo placerat.
+</p><p>
+Mauris at quam luctus, malesuada lorem sit amet, vestibulum justo. Morbi scelerisque tortor et magna sagittis, a efficitur sapien aliquet. Vestibulum in tortor ligula. Nulla eu mattis ex. Suspendisse sit amet sem orci. Praesent commodo vestibulum eleifend. Mauris facilisis risus nunc, sit amet molestie massa mollis ut. Nullam eget felis fermentum dui tincidunt blandit ut sed ante. Cras lectus urna, porttitor nec turpis molestie, dignissim volutpat arcu. Ut feugiat porta diam. Maecenas varius faucibus justo in molestie.
+</p><p>
+Nullam sodales velit ipsum, non accumsan enim feugiat at. Vestibulum dictum iaculis metus, sed ullamcorper risus laoreet a. Mauris id nibh vitae diam euismod tincidunt. Morbi ac viverra risus. In hac habitasse platea dictumst. Nullam volutpat, augue eu accumsan porta, enim turpis cursus arcu, sed blandit augue sapien non lectus. Morbi rhoncus dictum metus et mattis. Fusce ac blandit arcu. Vestibulum vehicula enim ex. Nam et metus vitae lacus sodales rhoncus. Praesent luctus laoreet velit, sit amet cursus ligula. Nullam id ligula leo. Integer arcu ipsum, convallis et nulla fringilla, dictum tincidunt lorem. Duis eu congue ligula.
+    </p></article>
+    <article>
+      <header>Tabaco Galego</header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae elit pharetra, ultrices urna varius, tempor purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean a odio at neque sodales varius. Proin ut arcu a felis condimentum interdum quis ornare lacus. Cras accumsan sapien et ligula tincidunt, ac malesuada orci faucibus. Nullam sed consequat felis, vel ullamcorper enim. Pellentesque a semper arcu. Nullam tellus nisi, varius id massa ac, dapibus convallis risus.
+</p><p>
+Donec lorem nulla, pharetra at lectus vel, eleifend aliquam orci. Mauris imperdiet iaculis metus vitae aliquet. Nullam ante elit, posuere vitae viverra vel, suscipit non leo. Pellentesque imperdiet tellus nec quam fringilla, ut vehicula nibh iaculis. Sed congue, leo ac hendrerit lacinia, ipsum eros rutrum felis, non ornare eros ipsum nec dui. Vivamus vestibulum fermentum mi, id dictum erat efficitur semper. Nunc euismod dolor in vehicula vestibulum. Maecenas dapibus lacinia lorem, sed consequat urna dignissim non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer facilisis, ex pretium convallis fringilla, turpis libero ultricies tellus, id aliquam sem lacus sit amet felis.
+</p><p>
+Integer nec ultricies ipsum, ut laoreet justo. Cras non malesuada ipsum. Aenean scelerisque sem et viverra faucibus. Proin sed lorem in eros vestibulum convallis vitae sed erat. Etiam egestas vehicula gravida. Suspendisse sed pharetra quam. In nec tortor iaculis, rhoncus leo a, varius eros. Nullam vitae leo neque. Etiam mollis dictum lectus fermentum aliquam. Mauris a sodales mauris. Etiam fermentum in sapien eu lacinia. Etiam non lectus sed lectus commodo placerat.
+</p><p>
+Mauris at quam luctus, malesuada lorem sit amet, vestibulum justo. Morbi scelerisque tortor et magna sagittis, a efficitur sapien aliquet. Vestibulum in tortor ligula. Nulla eu mattis ex. Suspendisse sit amet sem orci. Praesent commodo vestibulum eleifend. Mauris facilisis risus nunc, sit amet molestie massa mollis ut. Nullam eget felis fermentum dui tincidunt blandit ut sed ante. Cras lectus urna, porttitor nec turpis molestie, dignissim volutpat arcu. Ut feugiat porta diam. Maecenas varius faucibus justo in molestie.
+</p><p>
+Nullam sodales velit ipsum, non accumsan enim feugiat at. Vestibulum dictum iaculis metus, sed ullamcorper risus laoreet a. Mauris id nibh vitae diam euismod tincidunt. Morbi ac viverra risus. In hac habitasse platea dictumst. Nullam volutpat, augue eu accumsan porta, enim turpis cursus arcu, sed blandit augue sapien non lectus. Morbi rhoncus dictum metus et mattis. Fusce ac blandit arcu. Vestibulum vehicula enim ex. Nam et metus vitae lacus sodales rhoncus. Praesent luctus laoreet velit, sit amet cursus ligula. Nullam id ligula leo. Integer arcu ipsum, convallis et nulla fringilla, dictum tincidunt lorem. Duis eu congue ligula.
+    </p></article>
+    <article>
+      <header>Que facer no rural</header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae elit pharetra, ultrices urna varius, tempor purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean a odio at neque sodales varius. Proin ut arcu a felis condimentum interdum quis ornare lacus. Cras accumsan sapien et ligula tincidunt, ac malesuada orci faucibus. Nullam sed consequat felis, vel ullamcorper enim. Pellentesque a semper arcu. Nullam tellus nisi, varius id massa ac, dapibus convallis risus.
+</p><p>
+Donec lorem nulla, pharetra at lectus vel, eleifend aliquam orci. Mauris imperdiet iaculis metus vitae aliquet. Nullam ante elit, posuere vitae viverra vel, suscipit non leo. Pellentesque imperdiet tellus nec quam fringilla, ut vehicula nibh iaculis. Sed congue, leo ac hendrerit lacinia, ipsum eros rutrum felis, non ornare eros ipsum nec dui. Vivamus vestibulum fermentum mi, id dictum erat efficitur semper. Nunc euismod dolor in vehicula vestibulum. Maecenas dapibus lacinia lorem, sed consequat urna dignissim non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer facilisis, ex pretium convallis fringilla, turpis libero ultricies tellus, id aliquam sem lacus sit amet felis.
+</p><p>
+Integer nec ultricies ipsum, ut laoreet justo. Cras non malesuada ipsum. Aenean scelerisque sem et viverra faucibus. Proin sed lorem in eros vestibulum convallis vitae sed erat. Etiam egestas vehicula gravida. Suspendisse sed pharetra quam. In nec tortor iaculis, rhoncus leo a, varius eros. Nullam vitae leo neque. Etiam mollis dictum lectus fermentum aliquam. Mauris a sodales mauris. Etiam fermentum in sapien eu lacinia. Etiam non lectus sed lectus commodo placerat.
+</p><p>
+Mauris at quam luctus, malesuada lorem sit amet, vestibulum justo. Morbi scelerisque tortor et magna sagittis, a efficitur sapien aliquet. Vestibulum in tortor ligula. Nulla eu mattis ex. Suspendisse sit amet sem orci. Praesent commodo vestibulum eleifend. Mauris facilisis risus nunc, sit amet molestie massa mollis ut. Nullam eget felis fermentum dui tincidunt blandit ut sed ante. Cras lectus urna, porttitor nec turpis molestie, dignissim volutpat arcu. Ut feugiat porta diam. Maecenas varius faucibus justo in molestie.
+</p><p>
+Nullam sodales velit ipsum, non accumsan enim feugiat at. Vestibulum dictum iaculis metus, sed ullamcorper risus laoreet a. Mauris id nibh vitae diam euismod tincidunt. Morbi ac viverra risus. In hac habitasse platea dictumst. Nullam volutpat, augue eu accumsan porta, enim turpis cursus arcu, sed blandit augue sapien non lectus. Morbi rhoncus dictum metus et mattis. Fusce ac blandit arcu. Vestibulum vehicula enim ex. Nam et metus vitae lacus sodales rhoncus. Praesent luctus laoreet velit, sit amet cursus ligula. Nullam id ligula leo. Integer arcu ipsum, convallis et nulla fringilla, dictum tincidunt lorem. Duis eu congue ligula.
+    </p></article>
+  </div>
+  <div class="comp-pool-client" ng-controller="JobsCtrl">
+    <div ng-show="status != statuses.idle" ng-click="deactivate()">
+      Click to stop: 
+      <span ng-show="status === statuses.connecting">Connecting...</span>
+      <span ng-show="status === statuses.ok">Got {{stats.results}} results ({{stats.resultsPerSecond | number:2}} r/s in {{stats.timeSpent | number:3}} seconds)</span>
+      <span ng-show="status === statuses.error">An error ocurred{{errorMessage}}</span>
     </div>
-    <div class="list-group-item container" ng-show="status == statuses.idle">
-      <a ng-click="activate()">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 text-center">Click to help people with your computer</div>
-        <div class="col-md-3"></div>
-      </a>
-    </div>
-  </nav>
+    <div ng-show="status == statuses.idle" ng-click="activate()">Click to help people with your computer</div>
+  </div>
 </body>
 
 </html>

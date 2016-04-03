@@ -6,3 +6,4 @@
 /logs/
 grunt.deploy.options.json
 .project
+Thumbs.db
