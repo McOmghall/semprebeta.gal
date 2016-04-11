@@ -1,18 +1,54 @@
+html, body {
+	border: 0;
+	margin: 0;
+}
+.gliph {
+	width: 1.1em !important;
+	height: auto;
+}
+.comp-pool-client {
+	display: none; 
+}
+.contact {
+	display: block;
+}
+.contact img {
+	width: 2em;
+	height: auto;
+}
+.navbar-addons.social * {
+	vertical-align: middle;
+}
+a {
+	text-decoration: none;
+	transition: color 0.5s;
+}
+a:hover {
+	color: #BE98F8;
+}
+
+@media (max-width : 1200px) {
+	.navbar {
+		font-size: 0.8em !important;
+	}
+}
+
 @media ( min-width : 768px) {
 	html, body {
 		display: flex;
 		background: dank memes;
-		border: 0;
-		margin: 0;
 	}
 	.navbar {
 		flex: 3;
 		margin-right: 0;
 		margin-left: 0;
 		margin-bottom: 0;
-		background: #F5F8FC;
-		background-image: linear-gradient(to bottom, #F5F8FC, #FCF8F5);
-		border: 0;
+		background: #D2F898;
+		background-image: linear-gradient(150deg, #D2F898, #FFF8AA);
+		font-size: 1.1em;
+	}
+	.navbar > div {
+		width: 27.3%;
 	}
 	.navbar-brand {
 		width: 100%;
@@ -21,38 +57,68 @@
 		display: block;
 	}
 	.toc {
-		font-size: 1.7em;
-		font-family: 'Rubik One', sans-serif;
-		position: fixed;
+		font-family: 'Merriweather', sans-serif;
 	}
-	.toc>a {
+	.toc > a {
 		display: block;
+		margin-top: 1.2em;
+		text-decoration: none !important;
 	}
-	.toc>* {
+	.toc > * {
 		position: relative;
 	}
 	.content {
 		flex: 8;
-		background: #D2F898;
+		background: #FDFFFD;
+		background: rgba(253, 255, 253, 0.6);
 		font-family: 'Poppins', sans-serif;
 	}
 	.content > article {
-		padding: 30px;
+		padding-bottom: 30px;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-top: 10px;
 	}
 	article > header {
-		font-family: 'Rubik One', sans-serif;
+		font-family: 'Merriweather', sans-serif;
 	}
 	article > p {
 		text-align: justify;
 	}
-	.comp-pool-client {
-		width: 14.59%;
-		max-height: 14.59%;
+	.fixed {
 		position: fixed;
+	}
+	.navbar-addons {
+		padding-left: 5.46%;
+	}
+	.navbar-addons > a {
+		padding-left: 5.46%;
+		text-decoration: none;
+	}
+	.navbar-addons.social {
+		position: relative;
+		margin-top: 20%;
+	}
+	.navbar-addons h1 {
+		text-decoration: underline;
+		text-decoration-color: black;
+	}
+	.comp-pool-client {
+		font-family: 'Poppins', sans-serif;
+		display: block;
+		box-sizing: border-box;
+		width: 27.3%;
+		height: 14.59%;
+		position: fixed;
+		border: 2px solid red !important;
+		border-radius: 3px;
+		padding: 1%;
 		left: 0;
 		bottom: 0;
-		z-index: 3;
+		z-index: 10;
 		float: none;
+		vertical-align: middle !important;
+		text-align: center !important;
 	}
 }
 
@@ -69,5 +135,33 @@
 		padding-bottom: 0px;
 		display: block;
 		top: 0;
+	}
+	.navbar {
+		background: #D2F898;
+		background-image: linear-gradient(150deg, #D2F898, #FFF8AA);
+		font-size: 1.1em;
+		padding-bottom: 2em;
+		text-align: center;
+	}
+	.toc > a {
+		display: block;
+		margin-top: 1em;
+	}
+	.navbar-addons {
+		margin: 0 auto;
+		width: 77%;
+		height: auto;
+	}
+	.navbar-addons > h1 {
+		font-size: 1.7em;
+	}
+	.social .contact {
+		text-align: left;
+		padding-left: 16.6%;
+	}
+	.content {
+		text-align: justify;
+		margin: 0 auto;
+		width: 86%;
 	}
 }
