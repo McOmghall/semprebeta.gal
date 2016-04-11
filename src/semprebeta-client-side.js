@@ -67,7 +67,7 @@ angular.module('SemprebetaApp', ['CompPoolClient'])
         }).catch(function (err) {
           $log.error('Something happened! %j', err)
           $scope.status = $scope.statuses.error
-          $scope.errorMessage = "ERRO: Non se puido conectar ao servidor comp-pool"
+          $scope.errorMessage = 'ERRO: Non se puido conectar ao servidor comp-pool'
         })
 
         $log.debug('Activated %j', pq)
