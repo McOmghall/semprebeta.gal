@@ -33,6 +33,12 @@ a:hover {
 	}
 }
 
+@media (min-width : 1700px) {
+	.navbar {
+		font-size: 1.2em !important;
+	}
+}
+
 @media ( min-width : 768px) {
 	html, body {
 		display: flex;
@@ -93,7 +99,6 @@ a:hover {
 	}
 	.navbar-addons > a {
 		padding-left: 5.46%;
-		text-decoration: none;
 	}
 	.navbar-addons.social {
 		position: relative;
