@@ -1,0 +1,89 @@
+@media ( min-width : 768px) {
+	html, body {
+		display: flex;
+		background: dank memes;
+	}
+	.navbar {
+		flex: 3;
+		margin-right: 0;
+		margin-left: 0;
+		margin-bottom: 0;
+		font-size: 1.1em;
+	}
+	.navbar > div {
+		width: 18.4%;
+	}
+	.navbar-brand {
+		width: 100%;
+		height: auto;
+		padding: 0;
+		display: block;
+		margin-top: 2px;
+		margin-left: 2px;
+	}
+	.toc {
+		font-family: 'Muli', sans-serif;
+	}
+	.toc > a {
+		display: block;
+		margin-top: 1.2em;
+		text-decoration: none !important;
+	}
+	.toc > * {
+		position: relative;
+	}
+	.content {
+		flex: 13;
+		background: #FDFFFD;
+		background: rgba(253, 255, 253, 0.6);
+		font-family: 'Poppins', sans-serif;
+	}
+	.content > article {
+		padding-bottom: 30px;
+		padding-left: 19.1%;
+		padding-right: 19.1%;
+		padding-top: 10px;
+	}
+	article > header {
+		font-family: 'Muli', sans-serif;
+	}
+	article > p {
+		text-align: justify;
+	}
+	.fixed {
+		position: fixed;
+	}
+	.navbar-addons {
+		margin-left: 4.5%;
+		margin-bottom: 19.1%;
+		width: 87%;
+		height: auto;
+		text-align: center;
+	}
+	.navbar-addons > h1 {
+		font-size: 1.7em;
+	}
+	.social .contact {
+		text-align: left;
+		padding-left: 10.6%;
+	}
+	.comp-pool-client {
+		font-family: 'Poppins', sans-serif;
+		display: block;
+		box-sizing: border-box;
+		width: 18.4%;
+		height: 14.59%;
+		position: fixed;
+		border-radius: 3px;
+		margin-bottom: 2px;
+		margin-left: 2px;
+		padding: 1%;
+		font-size: 1.2em;
+		left: 0;
+		bottom: 0;
+		z-index: 10;
+		float: none;
+		vertical-align: middle !important;
+		text-align: center !important;
+	}
+}

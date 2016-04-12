@@ -25,7 +25,7 @@ module.exports = function (grunt) {
         expand: true,
         filter: 'isFile',
         cwd: '<%=sourceDir%>',
-        src: ['base.html', 'semprebeta-client-side.css', 'imgs/**'],
+        src: ['base.html', '*.css', 'imgs/**'],
         dest: '<%=distroDir%>'
       },
       css: {

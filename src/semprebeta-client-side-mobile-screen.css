@@ -1,0 +1,41 @@
+@media ( max-width : 767px) {
+	.navbar-brand {
+		height: auto;
+		margin: 0 auto;
+		width: 50%;
+		top: 0;
+		left: 0;
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		display: block;
+		top: 0;
+	}
+	.navbar {
+		font-size: 1.1em;
+		padding-bottom: 2em;
+		text-align: center;
+	}
+	.toc > a {
+		display: block;
+		margin-top: 1em;
+	}
+	.navbar-addons {
+		margin: 0 auto;
+		width: 77%;
+		height: auto;
+	}
+	.navbar-addons > h1 {
+		font-size: 1.7em;
+	}
+	.social .contact {
+		text-align: left;
+		padding-left: 16.6%;
+	}
+	.content {
+		text-align: justify;
+		margin: 0 auto;
+		width: 86%;
+	}
+}

@@ -10,8 +10,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:export-ydpi="75.381393"
-   inkscape:export-xdpi="75.381393"
+   inkscape:export-ydpi="300"
+   inkscape:export-xdpi="300"
    inkscape:export-filename="C:\Users\pmgbe_000\git\semprebeta.gal\src\imgs\web_icon.png"
    sodipodi:docname="semprebetagalsemprebetaicon.v2.svg"
    inkscape:version="0.91 r13725"
@@ -19,7 +19,7 @@
    id="svg2"
    viewBox="0 0 600.00005 0"
    height="522.75842"
-   width="1861.6769">
+   width="1819.8291">
   <sodipodi:namedview
      inkscape:guide-bbox="true"
      showborder="true"
@@ -39,8 +39,8 @@
      showgrid="true"
      inkscape:current-layer="svg2"
      inkscape:document-units="px"
-     inkscape:cy="514.05027"
-     inkscape:cx="517.34336"
+     inkscape:cy="259.99687"
+     inkscape:cx="945.3029"
      inkscape:zoom="0.65053825"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -51,35 +51,39 @@
     <sodipodi:guide
        id="guide4181"
        orientation="522.9402,0"
-       position="-371.42683,-16.638465" />
+       position="-371.42683,-16.638477" />
     <sodipodi:guide
        id="guide4183"
        orientation="522.9402,0"
-       position="313.05817,-16.638465" />
+       position="313.05817,-16.638477" />
     <sodipodi:guide
        id="guide4185"
        orientation="522.9402,0"
-       position="997.54316,-16.638465" />
+       position="997.54316,-16.638477" />
     <sodipodi:guide
        id="guide4187"
        orientation="0,1368.97"
-       position="-371.42683,-16.638465" />
+       position="-371.42683,-16.638477" />
     <sodipodi:guide
        id="guide4189"
        orientation="0,1368.97"
-       position="-371.42683,114.09653" />
+       position="-371.42683,114.09652" />
     <sodipodi:guide
        id="guide4191"
        orientation="0,1368.97"
-       position="-371.42683,244.83163" />
+       position="-371.42683,244.83162" />
     <sodipodi:guide
        id="guide4193"
        orientation="0,1368.97"
-       position="-371.42683,375.56663" />
+       position="-371.42683,375.56662" />
     <sodipodi:guide
        id="guide4195"
        orientation="0,1368.97"
-       position="594.892,570.29698" />
+       position="594.892,570.29697" />
+    <sodipodi:guide
+       position="1820.0313,846.99092"
+       orientation="1,0"
+       id="guide4171" />
   </sodipodi:namedview>
   <defs
      id="defs4">
@@ -125,10 +129,11 @@
      id="layer1"
      transform="translate(-458.72954,-673.70533)" />
   <path
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#f40b0b;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.30201745;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     d="m 0,11.2 0,1.150391 0,500.849599 457.43479,0 0,-501.99999 L 0,11.2 Z m 1.20108,2.302735 455.03364,0 0,497.396475 -455.03364,0 0,-497.396475 z"
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#263238;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.30201745;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     d="m 0,11.2 0,1.150391 0,500.849599 457.43479,0 0,-501.99999 z m 11.201,12.302423 440.034,0 0,477.396997 -440.034,0 z"
      id="rect5580-1"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccc" />
   <flowRoot
      style="font-style:normal;font-weight:normal;font-size:180px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      id="flowRoot5148"
@@ -154,17 +159,17 @@
          id="rect5160" /></flowRegion><flowPara
        id="flowPara5162" /></flowRoot>  <flowRoot
      transform="matrix(5.2204562,0,0,7.0346145,-995.78017,-273.52644)"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';letter-spacing:0px;word-spacing:0px;fill:#f40b0b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';letter-spacing:0px;word-spacing:0px;fill:#263238;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
      id="flowRoot5164"
      xml:space="preserve"><flowRegion
        id="flowRegion5166"><rect
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#f40b0b;fill-opacity:1;stroke:none;stroke-opacity:1;"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#263238;fill-opacity:1;stroke:none;stroke-opacity:1;"
          y="29.502638"
          x="-29.206583"
          height="108.99237"
          width="868.51141"
          id="rect5168" /></flowRegion><flowPara
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:67.5px;font-family:'Rubik One';-inkscape-font-specification:'Rubik One';text-align:center;text-anchor:middle;fill:#f40b0b;fill-opacity:1;stroke:none;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:67.5px;font-family:'Rubik One';-inkscape-font-specification:'Rubik One';text-align:center;text-anchor:middle;fill:#263238;fill-opacity:1;stroke:none;stroke-opacity:1;"
        id="flowPara5170">.gal</flowPara></flowRoot>  <flowRoot
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      id="flowRoot5244"
@@ -177,18 +182,18 @@
          width="868.5116"
          id="rect5248" /></flowRegion><flowPara
        id="flowPara5250" /></flowRoot>  <path
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#f40b0b;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     d="m 457.41554,11.229862 0,0.999235 0,500.962173 1326.23396,0 0,-233.99274 78.0274,0 0,-2.97819 -5.8639,0 0.7966,0.16513 -66.5866,0 -6.3735,-0.16513 -5.8638,0 0,234.97246 -1314.50637,0 0,-497.964468 1314.50637,0 0,234.767528 5.8638,0 3.187,0.14544 68.9765,0 0,-0.14544 5.8639,0 0,-2.93916 -78.0274,0.17955 0,-234.006388 z"
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#263238;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     d="m 457.41554,11.229862 0,0.999235 0,500.962173 1326.23396,0 0,-233.99274 36.1796,0.27174 -0.2718,-3.24993 c -26.3149,1.17302 0,0 -29.5343,0.16513 l -6.3735,-0.16513 -11.8635,0 0,224.97208 -1308.507,0 3.3e-4,-477.963997 1308.50667,0 0,224.767437 11.8635,0 3.187,0.14544 c 10.8552,0.0623 21.7091,-0.0398 32.5635,-0.14544 l 0.4291,0 0,-2.66742 -36.1796,-0.0922 0,-234.006388 z"
      id="rect5580-6"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccccccccccccccccccccc" />
+     sodipodi:nodetypes="ccccccccccccccccccccccc" />
   <g
      transform="matrix(2.2539082,-0.01939258,-0.06095776,2.025816,-48.3396,-170.1954)"
-     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f40b0b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#263238;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      id="flowRoot3392-3">
     <path
        d="m 77.162651,282.03447 -13.03503,60.4248 -22.583008,0 40.527096,-187.86621 Q 94.079737,98.929007 146.0817,98.929007 q 52.97851,0 42.84014,46.997063 -7.21535,33.44727 -30.84478,45.6543 31.80969,10.98633 24.77867,43.5791 -12.48203,57.86133 -71.31992,57.86133 -25.878907,0 -34.373159,-10.98633 z m 6.320017,-29.29688 q 8.994129,21.11817 33.041982,21.11817 35.15625,0 43.42493,-38.33008 7.42601,-34.42383 -49.79394,-31.73828 l 4.47667,-20.75195 q 44.31153,0 52.73822,-39.0625 5.76701,-26.7334 -22.79745,-26.7334 -31.86035,0 -40.07637,38.08593 l -21.014042,97.41211 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:250px;font-family:'Ancient Geek';-inkscape-font-specification:'Ancient Geek';fill:#f40b0b;fill-opacity:1;stroke:none;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:250px;font-family:'Ancient Geek';-inkscape-font-specification:'Ancient Geek';fill:#263238;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="path3433-9"
        inkscape:connector-curvature="0" />
   </g>

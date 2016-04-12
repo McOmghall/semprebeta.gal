@@ -1,0 +1,57 @@
+/*
+	Color scheme
+	607D8B - dark off blue navbar
+	E84E40 - toasty firm red, titles and highlights
+	263238 - dark gray, logo
+	ECEFF1 - clear gray
+	069DE5 - intense clear blue for links
+*/
+
+html, body {
+	border: 0;
+	margin: 0;
+}
+.gliph {
+	width: 1.1em !important;
+	height: auto;
+}
+.comp-pool-client {
+	display: none; 
+}
+.contact {
+	display: block;
+}
+.contact img {
+	width: 2em;
+	height: auto;
+}
+.navbar {
+	background: #607D8B;
+}
+.navbar-addons.social * {
+	vertical-align: middle;
+}
+a {
+	text-decoration: none;
+	transition: color 0.5s;
+	color: #ECEFF1;
+}
+a:hover {
+	color: #069DE5;
+}
+.navbar-addons h1, .navbar-addons h2 {
+	color: #ECEFF1;
+}
+.navbar-addons h2 {
+	font-size: 1em;
+}
+
+article > header {
+	color: #E84E40;
+}
+
+@media (max-width : 1200px) {
+	.navbar {
+		font-size: 0.8em !important;
+	}
+}
