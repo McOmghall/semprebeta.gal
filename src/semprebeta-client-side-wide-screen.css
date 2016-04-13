@@ -8,7 +8,6 @@
 		margin-right: 0;
 		margin-left: 0;
 		margin-bottom: 0;
-		font-size: 1.1em;
 	}
 	.navbar > div {
 		width: 18.4%;
@@ -21,22 +20,15 @@
 		margin-top: 2px;
 		margin-left: 2px;
 	}
-	.toc {
-		font-family: 'Muli', sans-serif;
-	}
 	.toc > a {
 		display: block;
 		margin-top: 1.2em;
-		text-decoration: none !important;
 	}
 	.toc > * {
 		position: relative;
 	}
 	.content {
 		flex: 13;
-		background: #FDFFFD;
-		background: rgba(253, 255, 253, 0.6);
-		font-family: 'Poppins', sans-serif;
 	}
 	.content > article {
 		padding-bottom: 30px;
@@ -44,11 +36,9 @@
 		padding-right: 19.1%;
 		padding-top: 10px;
 	}
-	article > header {
-		font-family: 'Muli', sans-serif;
-	}
 	article > p {
 		text-align: justify;
+		margin-bottom: 0;
 	}
 	.fixed {
 		position: fixed;

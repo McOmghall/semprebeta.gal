@@ -10,6 +10,7 @@
 html, body {
 	border: 0;
 	margin: 0;
+	background: #ECEFF1;
 }
 .gliph {
 	width: 1.1em !important;
@@ -34,10 +35,12 @@ html, body {
 a {
 	text-decoration: none;
 	transition: color 0.5s;
-	color: #ECEFF1;
 }
 a:hover {
-	color: #069DE5;
+	color: #069DE5 !important;
+}
+.navbar-addons {
+	font-family: 'Muli', sans-serif;
 }
 .navbar-addons h1, .navbar-addons h2 {
 	color: #ECEFF1;
@@ -45,13 +48,33 @@ a:hover {
 .navbar-addons h2 {
 	font-size: 1em;
 }
-
-article > header {
+article > header, article > h1, article > h2, .content strong {
+	color: #E84E40;
+	font-family: 'Muli', sans-serif;
+}
+.content strong {
+	font-style: italic;
+}
+article > h2 {
+	font-size: 1em;
+	font-style: italic;
+}
+article > .note {
+	font-size: 0.8em;
+	color: #263238;
+	text-align: right;
+}
+.content {
+	font-family: 'Poppins', sans-serif;
+}
+.content a {
 	color: #E84E40;
 }
-
+.navbar a {
+	color: #ECEFF1;
+}
 @media (max-width : 1200px) {
-	.navbar {
+	.navbar, .comp-pool-client {
 		font-size: 0.8em !important;
 	}
 }
