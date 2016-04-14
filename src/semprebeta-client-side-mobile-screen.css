@@ -38,4 +38,12 @@
 		margin: 0 auto;
 		width: 86%;
 	}
+	.worker-profile {
+		text-align: center;
+		font-size: 0.8em;
+	}
+	.worker-profile img {
+		display: block;
+		width: 5em;
+	}
 }

@@ -57,6 +57,16 @@
 		text-align: left;
 		padding-left: 10.6%;
 	}
+	.worker-profile {
+		text-align: center;
+		font-size: 0.8em;
+		width: 10em;
+	}
+	.worker-profile img {
+		display: block;
+		width: 5em;
+		margin: 0 auto;
+	}
 	.comp-pool-client {
 		font-family: 'Poppins', sans-serif;
 		display: block;
