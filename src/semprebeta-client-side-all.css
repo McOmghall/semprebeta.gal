@@ -73,7 +73,7 @@ article > .note {
 .navbar a {
 	color: #ECEFF1;
 }
-@media (max-width : 1200px) {
+@media (max-width : 1440px) {
 	.navbar, .comp-pool-client {
 		font-size: 0.8em !important;
 	}
