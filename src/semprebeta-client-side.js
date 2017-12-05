@@ -1,4 +1,4 @@
-require('angular') /*global angular*/
+require('angular') /* global angular */
 require('comp-pool')
 
 angular.module('SemprebetaApp', ['CompPoolClient'])

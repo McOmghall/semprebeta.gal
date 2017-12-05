@@ -8,28 +8,28 @@ const DINAHOSTING_CONTENT_TYPE = process.env.DINAHOSTING_CONTENT_TYPE || 'applic
 const DINAHOSTING_API_KEY = process.env.DINAHOSTING_API_KEY
 const DINAHOSTING_DOMAIN_TO_UPDATE = process.env.DINAHOSTING_DOMAIN_TO_UPDATE || 'semprebeta.gal'
 
-function HTTPGetRequestPromise(requestOptions) {
+function HTTPGetRequestPromise (requestOptions) {
   return request.get(requestOptions)
 }
 
-function IPResolveRequestPromise(url) {
-  return HTTPGetRequestPromise({ url: url }).then((result) => new Object({ ip: result }))
+function IPResolveRequestPromise (url) {
+  return HTTPGetRequestPromise({ url: url }).then((result) => ({ ip: result }))
 }
 
-function MultiIPResolveRequestPromise() {
-  const resolvers = IP_RESOLVER_HTTP_URLS.map((resolver_url) => new IPResolveRequestPromise(resolver_url))
+function MultiIPResolveRequestPromise () {
+  const resolvers = IP_RESOLVER_HTTP_URLS.map((resolverUrl) => new IPResolveRequestPromise(resolverUrl))
   return Promise.all(resolvers).then((results) => {
     results = results.sort().filter(function (item, pos, ary) {
       return !(pos && isEquivalent(item, ary[pos - 1]))
     })
-   
+
     console.log('Resolvers returned %j', results)
 
     return results[0]
   })
 }
 
-function RequestCommandDinahostingPromise(command, params) {
+function RequestCommandDinahostingPromise (command, params) {
   return request.post({
     url: DINAHOSTING_API_URL,
     headers: {
@@ -45,19 +45,19 @@ function RequestCommandDinahostingPromise(command, params) {
   })
 }
 
-function RequestValidateCredentialsDinahostingPromise() {
+function RequestValidateCredentialsDinahostingPromise () {
   return new RequestCommandDinahostingPromise('User_GetInfo', {})
 }
 
-function RequestListOfManagedServicesDinahostingPromise() {
+function RequestListOfManagedServicesDinahostingPromise () {
   return new RequestCommandDinahostingPromise('User_GetServices', {})
 }
 
-function RequestZoneListOfDomainDinahostingPromise() {
+function RequestZoneListOfDomainDinahostingPromise () {
   return new RequestCommandDinahostingPromise('Domain_Zone_GetAll', { domain: DINAHOSTING_DOMAIN_TO_UPDATE })
 }
 
-function DomainZoneTypeAUpdateIpDinahostingPromise(zone, ip) {
+function DomainZoneTypeAUpdateIpDinahostingPromise (zone, ip) {
   return new RequestCommandDinahostingPromise('Domain_Zone_UpdateTypeA', { domain: DINAHOSTING_DOMAIN_TO_UPDATE, hostname: zone, ip: ip })
 }
 
@@ -77,9 +77,9 @@ module.exports.update = function () {
       console.log('List of services %j', result)
       if (result.data.some((e) => e.service === DINAHOSTING_DOMAIN_TO_UPDATE)) {
         return new RequestZoneListOfDomainDinahostingPromise()
-      } 
+      }
 
-      return Promise.reject('Configured domain %s not in list of user\'s domains', DINAHOSTING_DOMAIN_TO_UPDATE)
+      return Promise.reject(new Error(`Configured domain ${DINAHOSTING_DOMAIN_TO_UPDATE} not in list of user's domains`))
     }).then((result) => {
       console.log('List of zones %j', result)
 
