@@ -1,13 +1,11 @@
-/* eslint-env jasmine */
-/* eslint-disable no-unused-vars */
-/* global angular, mediaTypeParser, linkHeaderParser */
-/* eslint-enable no-unused-vars */
-require('./semprebeta-client-side')
+const describe = require('mocha').describe
+const it = require('mocha').it
+const expect = require('chai').expect
 
 describe('semprebeta-client-side.test.js', function () {
   describe('checks parts are in place', function () {
-    it('not meaningful test', function () {
-      expect(true).toBeTruthy()
+    it('can expect things', function () {
+      expect(true).to.be.true()
     })
   })
 })

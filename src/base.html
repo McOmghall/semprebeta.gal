@@ -1,36 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="SemprebetaApp">
 
 <head>
-<title>semprebeta {punto} gal</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="initial-scale=1">
-<meta property="og:title" content="Benvida" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="semprebeta.gal" />
-<meta property="og:image" content="./imgs/icon.png" />
-<meta property="og:site_name" content="semprebeta.gal" />
-<!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78502217-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!-- build:js inline -->
-<script src="./semprebeta-client-side.js"></script>
-<!-- /build -->
-<link href='https://fonts.googleapis.com/css?family=Poppins&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-<!-- build:css inline -->
-<link rel="stylesheet" href="./semprebeta-client-side-all.css">
-<link rel="stylesheet" href="./semprebeta-client-side-wide-screen.css">
-<link rel="stylesheet" href="./semprebeta-client-side-mobile-screen.css">
-<!-- /build -->
+  <title>semprebeta {punto} gal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1">
+  <meta property="og:title" content="Benvida" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="semprebeta.gal" />
+  <meta property="og:image" content="./imgs/icon.png" />
+  <meta property="og:site_name" content="semprebeta.gal" />
+  <!-- build:js inline -->
+  <script src="./semprebeta-client-side.js"></script>
+  <!-- /build -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&subset=latin,latin-ext" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli" type="text/css">
+  <!-- build:css inline -->
+  <link rel="stylesheet" href="./semprebeta-client-side-all.css">
+  <link rel="stylesheet" href="./semprebeta-client-side-wide-screen.css">
+  <link rel="stylesheet" href="./semprebeta-client-side-mobile-screen.css">
+  <!-- /build -->
 </head>
 
 <body>
@@ -148,20 +137,6 @@
 			<h3>Matrix.org</h3>
 			<p>TBD</p>
 		</article>
-	</div>
-	<div class="comp-pool-client" ng-controller="JobsCtrl">
-		<a href="#comp-pool" title="Que é isto?">
-			<img class="gliph" src="./imgs/question_mark.png">
-		</a>
-		<div ng-show="status != statuses.idle" ng-click="deactivate()">
-			Clica para parar:
-			<span ng-show="status === statuses.connecting">Conectando...</span>
-			<span ng-show="status === statuses.ok">Calculados {{stats.results}} resultados, ({{stats.resultsPerSecond | number:2}} r/s en {{stats.timeSpent | number:3}} segundos)</span>
-			<span ng-show="status === statuses.error">{{errorMessage}}</span>
-		</div>
-		<div ng-show="status == statuses.idle">
-			<a href="" ng-click="activate()">Axuda nun proxecto de computación distribuída</a>
-		</div>
 	</div>
 </body>
 

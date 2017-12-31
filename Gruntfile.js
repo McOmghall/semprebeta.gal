@@ -12,12 +12,8 @@ module.exports = function (grunt) {
           '<%=distroDir%>semprebeta-client-side.js': ['<%=sourceDir%>semprebeta-client-side.js']
         },
         options: {
-          transform: ['envify']
+          transform: ['envify', ['babelify', { presets: ['env'] }]]
         }
-      },
-      test: {
-        src: ['./**/*.test.js', '!./node_modules/**', '!./test/**'],
-        dest: 'test/spec-bundle.js'
       }
     },
     copy: {
@@ -27,10 +23,6 @@ module.exports = function (grunt) {
         cwd: '<%=sourceDir%>',
         src: ['base.html', '*.css', 'imgs/**'],
         dest: '<%=distroDir%>'
-      },
-      css: {
-        src: ['./node_modules/bootstrap/dist/css/bootstrap.min.css'],
-        dest: '<%=distroDir%>bootstrap.css'
       },
       finalRelease: {
         src: ['<%=distroDir%>base.html'],
@@ -62,26 +54,28 @@ module.exports = function (grunt) {
       dist: {
         options: {
           removeComments: true,
-          collapseWhitespace: true
+          collapseWhitespace: true,
+          minifyCSS: true
         },
         files: {
           'dist/base.html': 'dist/base.html'
         }
       }
     },
-    jasmine: {
+    mocha: {
       test: {
-        options: {
-          specs: 'test/spec-bundle.js'
-        }
+        src: ['dist/index.html']
+      },
+      options: {
+        growlOnSuccess: false
       }
     }
   })
   grunt.config('node-env', grunt.option('env') || process.env.NODE_ENV || 'development')
   grunt.config('inProd', grunt.config('node-env') === 'production')
+  grunt.log.writeln('Got envs: ' + grunt.option('env') + ' - ' + process.env.NODE_ENV + ' default "develpment"')
   grunt.log.writeln('Node env: |' + grunt.config('node-env') + '|')
   grunt.log.writeln('In prod?: |' + grunt.config('inProd') + '| of type ' + typeof grunt.config('inProd'))
-  grunt.log.writeln('Comp-pool root env: |' + JSON.stringify(process.env.COMP_POOL_ROOT) + '|')
 
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-copy')
@@ -90,13 +84,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-processhtml')
   grunt.loadNpmTasks('grunt-contrib-htmlmin')
-  grunt.loadNpmTasks('grunt-contrib-jasmine')
+  grunt.loadNpmTasks('grunt-mocha')
 
   grunt.registerTask('minify', ['uglify', 'cssmin', 'processhtml', 'htmlmin'])
-  grunt.registerTask('test', ['browserify:test', 'jasmine:test'])
-  grunt.registerTask('preprocess', 'Build all', ['clean:dist', 'browserify:dist', 'copy:all', 'copy:css'])
+  grunt.registerTask('preprocess', 'Build all', ['clean:dist', 'browserify:dist', 'copy:all'])
   grunt.registerTask('development', ['preprocess', 'copy:finalRelease'])
   grunt.registerTask('production', ['preprocess', 'minify', 'copy:finalRelease'])
+  grunt.registerTask('test', ['production', 'mocha:test'])
 
   if (grunt.config('inProd')) {
     grunt.log.writeln('Loading production build as default')
