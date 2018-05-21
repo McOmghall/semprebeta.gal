@@ -1,13 +1,11 @@
 const mocha = require('mocha')
 
-const environment = process.env.NODE_ENV
-
-if (environment === 'production') {
+if (process.env.NODE_ENV === 'production') {
   window.ga = window.ga || function () { (window.ga.q = window.ga.q || []).push(arguments) }
   window.ga.l = new Date().getTime()
-  window.ga('create', 'UA-78502217-1', 'auto')
+  window.ga('create', process.env.GOOGLE_ANALYTICS_ID, 'auto')
   window.ga('send', 'pageview')
-} else if (environment === 'test') {
+} else if (process.env.NODE_ENV === 'test') {
   require('./semprebeta-client-side.test')
   mocha.run()
 }
