@@ -2,8 +2,16 @@ const mocha = require('mocha')
 
 if (process.env.NODE_ENV === 'production') {
   console.log('GA')
-  window.ga = window.ga || function () { (window.ga.q = window.ga.q || []).push(arguments) }
+  const gaHref = 'https://www.google-analytics.com/analytics.js'
+  window.ga = window.ga || function () { (window.ga.q = window.ga.q || []).push(window, document, 'script', gaHref, 'ga') }
   window.ga.l = new Date().getTime()
+  const insert = document.createElement('script')
+  insert.async = 1
+  insert.src = gaHref
+
+  const firstScript = document.getElementsByTagName('script')[0]
+  firstScript.parentNode.insertBefore(insert, firstScript)
+
   window.ga('create', process.env.GOOGLE_ANALYTICS_ID, 'auto')
   window.ga('send', 'pageview')
 } else if (process.env.NODE_ENV === 'test') {
