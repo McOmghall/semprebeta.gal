@@ -3,7 +3,7 @@ const mocha = require('mocha')
 if (process.env.NODE_ENV === 'production') {
   console.log('GA')
   const gaHref = 'https://www.google-analytics.com/analytics.js'
-  window.ga = window.ga || function(){ (ga.q = ga.q || []).push(arguments) }
+  window.ga = window.ga || function () { (window.ga.q = window.ga.q || []).push(arguments) }
   window.ga.l = new Date().getTime()
   const insert = document.createElement('script')
   insert.async = 1
