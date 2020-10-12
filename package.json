@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "angular": "^1.7.0",
+    "angular": "^1.8.0",
     "angular-ui-carousel": "^0.1.10",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
